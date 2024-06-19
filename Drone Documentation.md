@@ -31,8 +31,8 @@ When importing the stl file of the drone in gazebo , it is important to import t
 
 # Links:
 
--  Rotor of the drone: https://uav-en.tmotor.com/html/2018/navigato_0402/46.html
--  Propellers of the drone: https://www.mad-motor.com/collections/propellers
+-  Details about the rotor of the drone can be found in the following link: https://uav-en.tmotor.com/html/2018/navigato_0402/46.html
+-  Details about the propellers of the drone can be found in the following link: https://www.mad-motor.com/collections/propellers
 
 -  The 3D model of the drone was created in Inventor. To access the 3D model go to the **Final Update Assembly Drone.iam** file from the following link: https://drive.google.com/drive/folders/1MhGHMvqRIwXFox53sXme-O2n0eSo7QqC?usp=sharing  
 
