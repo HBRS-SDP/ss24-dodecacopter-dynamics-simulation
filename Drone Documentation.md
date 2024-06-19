@@ -30,6 +30,9 @@ The collision poses are adjusted to align with the visual parts at 0.228 meters 
 
 # Links:
 
-1. Rotor of the drone: https://uav-en.tmotor.com/html/2018/navigato_0402/46.html
-2. Propellers of the drone: https://www.mad-motor.com/collections/propellers
-3. 3D Model of the drone: https://drive.google.com/drive/folders/1MhGHMvqRIwXFox53sXme-O2n0eSo7QqC?usp=sharing
+-  Rotor of the drone: https://uav-en.tmotor.com/html/2018/navigato_0402/46.html
+-  Propellers of the drone: https://www.mad-motor.com/collections/propellers
+-   3D Model of the drone: https://drive.google.com/drive/folders/1MhGHMvqRIwXFox53sXme-O2n0eSo7QqC?usp=sharing
+
+Additional Reference:
+- Reference SDF FILE: iris.sdf
