@@ -28,11 +28,13 @@ The Dodecacopter Dynamics Simulation project is designed to enable safe testing 
         - Role: Mechanical Engineer
         - Goal: Create a realistic 3D model for import into Gazebo.
         - Acceptance Criteria: Accurate representation of physical dimensions and features.
+
  -   **Configuration File Creation**
         - Priority: High
         - Role: Software Developers
         - Goal: Configure the drone model within Gazebo with specific parameters.
         - Acceptance Criteria: Accurate mass, inertia, and other physical parameters.
+
   -  **Manual Control Implementation**
         - Priority: High
         - Role: Software Developers
