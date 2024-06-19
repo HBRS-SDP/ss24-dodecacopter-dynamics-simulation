@@ -3,7 +3,7 @@
 # Important Features:
 
 ## Pose Coordinates of the Drone:
-- IUC: Pose: <pose>0 0 0 0 0 0</pose>
+-  Base Pose: <pose>0 0 0 0 0 0</pose>
 This indicates that the base link is positioned at the origin (0, 0, 0) with no rotation (0, 0, 0).
 
 - Link Pose: <pose>0.415 0 0 0 0 0</pose>
