@@ -4,7 +4,7 @@
 # Dodecacopter Dynamics Simulation Project
 
 
-## Project Description
+# Project Description
 
 The Dodecacopter Dynamics Simulation project is designed to enable safe testing of new algorithms for a seeding drone within a simulated environment. By using a detailed 3D model of the dodecacopter and importing it into Gazebo, the project aims to evaluate the performance of various control strategies without risking physical damage to the drone.
 
