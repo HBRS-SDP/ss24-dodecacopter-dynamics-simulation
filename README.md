@@ -48,32 +48,32 @@ The Dodecacopter Dynamics Simulation project is designed to enable safe testing 
         -  Organized into a ROS package format.
         -  Focus on integrating the 3D model into Gazebo and proper configuration.
 
-    -  **ROS Nodes**
+    -  **ROS Nodes**L
         Simulation Nodes: Handle integration with Gazebo.
         Basic Control Node: Manage control commands for demonstrations.
 
-Integration
+-  **Integration**:
 
-    Development Branch: All development work will be conducted on a dedicated branch with frequent commits.
-    Merge Requests: Review and merge changes into the main branch upon reaching key milestones.
+    -  Development Branch: All development work will be conducted on a dedicated branch with frequent commits.
+    -  Merge Requests: Review and merge changes into the main branch upon reaching key milestones.
 
-Demonstration
+-  **Demonstration**:
 
-    Demo Setup: Simulate a dodecacopter's flight in Gazebo with predefined obstacles.
-    Operator Interaction: Initiate flight via ROS node commands.
-    System Response: Execute maneuvers using the SIYI MK15 controller and monitor via ROS topics.
+    -  Demo Setup: Simulate a dodecacopter's flight in Gazebo with predefined obstacles.
+    -  Operator Interaction: Initiate flight via ROS node commands.
+    -  System Response: Execute maneuvers using the SIYI MK15 controller and monitor via ROS topics.
 
-Collaboration Plans
+-  **Collaboration Plans**:
 
-    Scheduling: Regular team meetings.
-    Communication Tools: Slack, Google Meet, Webex, and GitHub.
-    Version Control: Managed through GitHub.
+    -  Scheduling: Regular team meetings.
+    -  Communication Tools: Slack, Google Meet, Webex, and GitHub.
+    -  Version Control: Managed through GitHub.
 
 ## Future Steps
 
-    Update the SDF file with correct poses of each part of the dodecacopter.
-    Create and validate test cases and scenarios.
-    Develop a communication interface for control commands.
+    -  Update the SDF file with correct poses of each part of the dodecacopter.
+    -  Create and validate test cases and scenarios.
+    -  Develop a communication interface for control commands.
 
 For detailed technical specifications, reference materials, and configuration data, please refer to the full project documentation and associated files.
 Repository Links
