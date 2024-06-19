@@ -21,19 +21,19 @@ The Dodecacopter Dynamics Simulation project is designed to enable safe testing 
    - Git & GitHub: For version control and project management.
    - Slack: For team communication and coordination.
 
-## Features:
+## Requirements Specifications:
 
- 1.  **3D Model Development**
+ **3D Model Development**
         - Priority: High
         - Role: Mechanical Engineer
         - Goal: Create a realistic 3D model for import into Gazebo.
         - Acceptance Criteria: Accurate representation of physical dimensions and features.
- 2.    **Configuration File Creation**
+    **Configuration File Creation**
         - Priority: High
         - Role: Software Developers
         - Goal: Configure the drone model within Gazebo with specific parameters.
         - Acceptance Criteria: Accurate mass, inertia, and other physical parameters.
-  3.  **Manual Control Implementation**
+    **Manual Control Implementation**
         - Priority: High
         - Role: Software Developers
         - Goal: Control the drone model in simulation using a SIYI MK15 controller.
@@ -41,7 +41,7 @@ The Dodecacopter Dynamics Simulation project is designed to enable safe testing 
 
 ## Project Structure:
 
-### Minimum Viable Product (MVP)
+ Minimum Viable Product (MVP)
 
     Project Organization
         Organized into a ROS package format.
