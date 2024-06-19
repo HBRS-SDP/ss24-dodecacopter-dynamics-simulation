@@ -23,7 +23,7 @@ The Dodecacopter Dynamics Simulation project is designed to enable safe testing 
 
 ## Requirements Specifications:
 
-- **3D Model Development**
+-     **3D Model Development**
         - Priority: High
         - Role: Mechanical Engineer
         - Goal: Create a realistic 3D model for import into Gazebo.
