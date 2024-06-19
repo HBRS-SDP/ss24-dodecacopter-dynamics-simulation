@@ -42,13 +42,13 @@ The Dodecacopter Dynamics Simulation project is designed to enable safe testing 
 
 ## Project Structure:
 
- Minimum Viable Product (MVP)
+ -  **Minimum Viable Product (MVP)**
 
-    Project Organization
-        Organized into a ROS package format.
-        Focus on integrating the 3D model into Gazebo and proper configuration.
+    -  **Project Organization**:
+        -  Organized into a ROS package format.
+        -  Focus on integrating the 3D model into Gazebo and proper configuration.
 
-    ROS Nodes
+    -  **ROS Nodes**
         Simulation Nodes: Handle integration with Gazebo.
         Basic Control Node: Manage control commands for demonstrations.
 
