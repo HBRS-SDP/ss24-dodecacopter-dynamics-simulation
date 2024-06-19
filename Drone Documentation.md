@@ -27,7 +27,7 @@ This positions the collision box -0.228 meters along the x-axis and -0.029 meter
 -  The link poses position the wing_arm_0 and wing_arm_1 links at 0.415 meters and -0.415 meters along the x-axis, respectively, relative to the base link. The visual poses of the wing arms are positioned back to the base link origin by offsetting them with -0.415 meters and 0.415 meters along the x-axis, respectively. This ensures that the visual meshes are displayed correctly at their intended locations. The collision poses are adjusted to align with the visual parts at 0.228 meters and -0.228 meters along the x-axis, respectively, and -0.029 meters along the z-axis, to accurately cover the wing arm visuals.
 
 ## Collision:
-When importing the stl file of the drone in gazebo , it is important to import the individual parts of the drone and not the whole drone. The reason for this is beacuse the drone will lack collision. Without collisin, the drone won't stay on the ground and it will pass through objects. This will also affect its center of gravity which will vary. 
+When importing the stl file of the drone in gazebo , it is important to import the individual parts of the drone and not the whole drone. The reason for this is because the drone will lack collision. Without collisin, the drone won't stay on the ground and it will pass through objects. This will also affect its center of gravity which will vary. 
 
 # Links:
 
