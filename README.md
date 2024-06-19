@@ -10,9 +10,9 @@ The Dodecacopter Dynamics Simulation project is designed to enable safe testing 
 
 ## Project Goals
 
-    Develop a comprehensive 3D model of the dodecacopter.
-    Create a configuration file with the drone's physical properties and dynamics for integration into Gazebo.
-    Enable manual control of the drone in the virtual environment for flight testing.
+    - Develop a comprehensive 3D model of the dodecacopter.
+    - Create a configuration file with the drone's physical properties and dynamics for integration into Gazebo.
+    - Enable manual control of the drone in the virtual environment for flight testing.
 
 ## Tools and Technologies
 
