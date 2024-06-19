@@ -1,6 +1,30 @@
 ## Documentation
 
-Below you will find specific links that provide information about the components of the drone and the 3D Model created in Inventor:
+# Pose Coordinates of the Drone:
+1. ##IUC: Pose: <pose>0 0 0 0 0 0</pose> ##
+This indicates that the base link is positioned at the origin (0, 0, 0) with no rotation (0, 0, 0).
+
+2. ##Link Pose: <pose>0.415 0 0 0 0 0</pose> ##
+This positions the wing_arm_0 link 0.415 meters along the x-axis from the origin of the base link with no rotation.
+Visual Pose: <pose>-0.415 0 0 0 0 0</pose>
+This positions the visual representation of wing_arm_0 -0.415 meters along the x-axis relative to the wing_arm_0 link origin, effectively placing it back at the origin of the base link.
+
+Collision Pose: <pose>0.228 0 -0.029 0 0 0</pose>
+This positions the collision box 0.228 meters along the x-axis and -0.029 meters along the z-axis relative to the wing_arm_0 link origin.
+
+Link Pose: <pose>-0.415 0 0 0 0 0</pose>
+This positions the wing_arm_1 link -0.415 meters along the x-axis from the origin of the base link with no rotation.
+Visual Pose: <pose>0.415 0 0 0 0 0</pose>
+This positions the visual representation of wing_arm_1 0.415 meters along the x-axis relative to the wing_arm_1 link origin, effectively placing it back at the origin of the base link.
+Collision Pose: <pose>-0.228 0 -0.029 0 0 0</pose>
+This positions the collision box -0.228 meters along the x-axis and -0.029 meters along the z-axis relative to the wing_arm_1 link origin.
+[18/06, 9:08 pm] IUC: Summary
+The link poses position the wing_arm_0 and wing_arm_1 links at 0.415 meters and -0.415 meters along the x-axis, respectively, relative to the base link.
+The visual poses of the wing arms are positioned back to the base link origin by offsetting them with -0.415 meters and 0.415 meters along the x-axis, respectively. This ensures that the visual meshes are displayed correctly at their intended locations.
+The collision poses are adjusted to align with the visual parts at 0.228 meters and -0.228 meters along the x-axis, respectively, and -0.029 meters along the z-axis, to accurately cover the wing arm visuals.
+
+
+# Links:
 
 1. Rotor of the drone: https://uav-en.tmotor.com/html/2018/navigato_0402/46.html
 2. Propellers of the drone: https://www.mad-motor.com/collections/propellers
