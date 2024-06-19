@@ -4,7 +4,7 @@
 # Dodecacopter Dynamics Simulation Project
 
 
-## Project Description
+## Project Description:
 
 The Dodecacopter Dynamics Simulation project is designed to enable safe testing of new algorithms for a seeding drone within a simulated environment. By using a detailed 3D model of the dodecacopter and importing it into Gazebo, the project aims to evaluate the performance of various control strategies without risking physical damage to the drone.
 
@@ -14,35 +14,35 @@ The Dodecacopter Dynamics Simulation project is designed to enable safe testing 
     - Create a configuration file with the drone's physical properties and dynamics for integration into Gazebo.
     - Enable manual control of the drone in the virtual environment for flight testing.
 
-## Tools and Technologies
+## Tools and Technologies:
 
-    ROS (Robot Operating System): For testing and validating the drone's dynamics.
-    Gazebo: A robotics simulation environment for controlling and simulating the dodecacopter.
-    Inventor: For creating the 3D model of the drone.
-    Git & GitHub: For version control and project management.
-    Slack: For team communication and coordination.
+   - ROS (Robot Operating System): For testing and validating the drone's dynamics.
+   - Gazebo: A robotics simulation environment for controlling and simulating the dodecacopter.
+   - Inventor: For creating the 3D model of the drone.
+   - Git & GitHub: For version control and project management.
+   - Slack: For team communication and coordination.
 
-## Features
+## Features:
 
  1.  **3D Model Development**
         - Priority: High
         - Role: Mechanical Engineer
         - Goal: Create a realistic 3D model for import into Gazebo.
         - Acceptance Criteria: Accurate representation of physical dimensions and features.
-    Configuration File Creation
-        Priority: High
-        Role: Software Developers
-        Goal: Configure the drone model within Gazebo with specific parameters.
-        Acceptance Criteria: Accurate mass, inertia, and other physical parameters.
-    Manual Control Implementation
-        Priority: High
-        Role: Software Developers
-        Goal: Control the drone model in simulation using a SIYI MK15 controller.
-        Acceptance Criteria: Accurate flight behavior with thrust, yaw, pitch, and roll commands.
+ 2.    **Configuration File Creation**
+        - Priority: High
+        - Role: Software Developers
+        - Goal: Configure the drone model within Gazebo with specific parameters.
+        - Acceptance Criteria: Accurate mass, inertia, and other physical parameters.
+  3.  **Manual Control Implementation**
+        - Priority: High
+        - Role: Software Developers
+        - Goal: Control the drone model in simulation using a SIYI MK15 controller.
+        - Acceptance Criteria: Accurate flight behavior with thrust, yaw, pitch, and roll commands.
 
-## Project Structure
+## Project Structure:
 
-Minimum Viable Product (MVP)
+### Minimum Viable Product (MVP)
 
     Project Organization
         Organized into a ROS package format.
