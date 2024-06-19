@@ -1,6 +1,6 @@
-## Documentation
+# Documentation
 
-# Pose Coordinates of the Drone:
+## Pose Coordinates of the Drone:
 1. ##IUC: Pose: <pose>0 0 0 0 0 0</pose> ##
 This indicates that the base link is positioned at the origin (0, 0, 0) with no rotation (0, 0, 0).
 
