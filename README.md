@@ -82,14 +82,11 @@ For detailed technical specifications, reference materials, and configuration da
 
 ## Installation
 To install the necessary dependencies, run the following commands:
-
 ```bash
 # Clone the repository
 git clone git@github.com:HBRS-SDP/ss24-dodecacopter-dynamics-simulation.git
-
 # Change directory
 cd ss24-dodecacopter-dynamics-simulation
-
 # Install dependencies
 pip install -r requirements.txt
 
