@@ -36,5 +36,4 @@ When importing the stl file of the drone in gazebo , it is important to import t
 
 -  The 3D model of the drone was created in Inventor. To access the 3D model go to the **Final Update Assembly Drone.iam** file from the following link: https://drive.google.com/drive/folders/1MhGHMvqRIwXFox53sXme-O2n0eSo7QqC?usp=sharing  
 
-Additional Reference:
-- Reference SDF FILE: [iris.sdf](https://github.com/PX4/PX4-SITL_gazebo-classic/tree/67431d233f0f08de647f0eb11239816f9c8bd6c6/models/iris)
+- The reference SDF FILE that was used in this project was the **iris.sdf** file from the following link: https://github.com/PX4/PX4-SITL_gazebo-classic/tree/67431d233f0f08de647f0eb11239816f9c8bd6c6/models/iris
