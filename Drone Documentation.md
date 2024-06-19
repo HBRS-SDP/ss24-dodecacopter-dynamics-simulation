@@ -35,4 +35,4 @@ The collision poses are adjusted to align with the visual parts at 0.228 meters 
 -   3D Model of the drone: https://drive.google.com/drive/folders/1MhGHMvqRIwXFox53sXme-O2n0eSo7QqC?usp=sharing
 
 Additional Reference:
-- Reference SDF FILE: iris.sdf
+- Reference SDF FILE: [iris.sdf](https://github.com/PX4/PX4-SITL_gazebo-classic/tree/67431d233f0f08de647f0eb11239816f9c8bd6c6/models/iris)
