@@ -77,7 +77,7 @@ The Dodecacopter Dynamics Simulation project is designed to enable safe testing 
 For detailed technical specifications, reference materials, and configuration data, please refer to the full project documentation and associated files.
 
 ## Repository Links:
--  Project Repository
+-  [Drone Documentation](https://github.com/HBRS-SDP/ss24-dodecacopter-dynamics-simulation/blob/main/Drone%20Documentation.md)
 -  [Project Board](https://github.com/orgs/HBRS-SDP/projects/17/views/1)
 
 ## Installation
