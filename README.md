@@ -69,13 +69,14 @@ The Dodecacopter Dynamics Simulation project is designed to enable safe testing 
     -  Communication Tools: Slack, Google Meet, Webex, and GitHub.
     -  Version Control: Managed through GitHub.
 
-## Future Steps
+## Future Steps:
 -  Update the SDF file with correct poses of each part of the dodecacopter.
 -  Create and validate test cases and scenarios.
 -  Develop a communication interface for control commands.
 
 For detailed technical specifications, reference materials, and configuration data, please refer to the full project documentation and associated files.
-Repository Links
+
+## Repository Links:
 -  Project Repository
 -  [Project Board](https://github.com/orgs/HBRS-SDP/projects/17/views/1)
 
