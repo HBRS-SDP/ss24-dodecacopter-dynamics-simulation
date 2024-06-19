@@ -1,10 +1,10 @@
 # Documentation
 
 ## Pose Coordinates of the Drone:
-- ##IUC: Pose: <pose>0 0 0 0 0 0</pose> ##
+- IUC: Pose: <pose>0 0 0 0 0 0</pose>
 This indicates that the base link is positioned at the origin (0, 0, 0) with no rotation (0, 0, 0).
 
-- ##Link Pose: <pose>0.415 0 0 0 0 0</pose> ##
+- Link Pose: <pose>0.415 0 0 0 0 0</pose>
 This positions the wing_arm_0 link 0.415 meters along the x-axis from the origin of the base link with no rotation.
 
 - Visual Pose: <pose>-0.415 0 0 0 0 0</pose>
