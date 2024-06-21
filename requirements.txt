@@ -1,0 +1,5 @@
+
+# requirements.txt for the project
+
+serial == 3.5
+crc16 == 
