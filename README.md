@@ -83,16 +83,20 @@ For detailed technical specifications, reference materials, and configuration da
 
 ## Installation
 
-To install the necessary dependencies, run the following commands:
+To install the necessary dependencies, run the following commands in terminal:
 
-```bash
 # Clone the repository
-
 git clone git@github.com:HBRS-SDP/ss24-dodecacopter-dynamics-simulation.git
+
 # Change directory
 cd ss24-dodecacopter-dynamics-simulation
 
 # Install dependencies
 pip install -r requirements.txt
 
+## Command to run the drone in QGroundControl
+make px4_sitl gazebo-classic_mku25
+pxh> commander takeoff
+
 This is a  an overview of the project, its goals, and the tools and technologies used. For more detailed information, please refer to the project documentation included in this repository.
+
