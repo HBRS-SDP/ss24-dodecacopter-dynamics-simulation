@@ -1,9 +1,11 @@
 import serial.tools.list_ports as Ports
 from typing import List,Callable
+from collections import defaultdict
 import serial
 import re
-import time
-import threading
+import numpy as np
+import rospy
+from sensor_msgs.msg import Joy
     
 # Final version. Class + data is readed byte by byte
 
@@ -98,6 +100,25 @@ class Initializer():
         return data+crc16
         
 
+class JoyPublisher:
+    def __init__(self, data : list[int]) :
+        rospy.init_node('joy_publisher', anonymous=True)
+        self.publisher = rospy.Publisher('joy', Joy, queue_size=10)
+        self.rate = rospy.Rate(10)  # 10 Hz
+        self.data = data
+
+    def publish_joy_message(self):
+        while not rospy.is_shutdown():
+            joy_msg = Joy()
+            
+            # Simulate joystick axes
+            joy_msg.axes = self.data
+
+            self.publisher.publish(joy_msg)
+            rospy.loginfo(f'Published Joy message: Axes: {joy_msg.axes}, Buttons: {joy_msg.buttons}')
+            self.rate.sleep()
+
+
 
 class SerialReader():
 
@@ -106,7 +127,7 @@ class SerialReader():
                  baud_rate  : int = 9600 ,
                  timeout    : int = None , 
                  initilizer : str = None,
-                 callback   : Callable = None,
+                 desired_idx: list[int] = None,  # A list specifying the desired order or channel data
                  crc16      : Callable = crc16_cal
                  ) -> None :
         
@@ -126,8 +147,8 @@ class SerialReader():
                                 ) 
         self.initilizer = initilizer
         self.running = True
+        self.desired_idx = desired_idx
         self.crc16 = crc16
-        self.callback = callback
 
         # Initializeing the serial port
         self.ser.write(bytes.fromhex(self.initilizer))
@@ -135,7 +156,7 @@ class SerialReader():
     def read(self) -> str:
 
         buffer = ''
-        channel_data = {}
+        channel_data_dict = defaultdict()
         num_of_channels = 16
         i = 1
         n = 0
@@ -174,8 +195,8 @@ class SerialReader():
 
                 while i <= num_of_channels:
                 
-                    # channel_data[f'CH{i}'] = data[16:][n:n+4]
-                    channel_data[f'CH[{i}]'] = int(data[16:][n:n+4],16) if data[16:][n:n+4] else ''
+                    # channel_data_dict[f'CH[{i}]'] = int(data[16:][n:n+4],16) if data[16:][n:n+4] else None
+                    channel_data_dict[f'CH[{i}]'] = data[16:][n:n+4] if data[16:][n:n+4] else None
 
                     n+=4
                     i += 1
@@ -183,14 +204,30 @@ class SerialReader():
                     i = 1
                     n = 0
 
-                print(channel_data)
-                # print(buffer)
+                print(channel_data_dict)
 
-                #TO DO: Publishing data to ROS node
+                # Again, reversing the order of MSB and LSB for hex data in each channel!
+
+                for key,value in channel_data_dict.items():
+
+                    if value is not None:
+                        channel_data_dict[key] = int(self.reverse(value),16)
                 
+                print(channel_data_dict)
+
+
+                # Mapping data into desired output channel order, needs to be specified initially.
+
+                ordered_data = self.ch_data_transformer(channel_data_dict,self.desired_idx)
+                
+                #Publishing data to ROS node
+
+                callback_node = JoyPublisher(ordered_data)
+                callback_node.publish_joy_message()
+
                 buffer = ''
             else:
-                print('Received data has invalid CRC!')
+                print('Received data has INVALID CRC!')
                 buffer = ''
 
 
@@ -238,11 +275,27 @@ class SerialReader():
         # print('Data length in bytes:',decimal_value)  
 
         return decimal_value 
+    
+    def ch_data_transformer (self,ch_data_dict : dict, desired_idx : list[int]) -> list[int] :
 
+        channel_data_list = list(ch_data_dict.values())
+        out_list = np.zeros(16)
+
+        # Mapping the channel dsata based on the desired output channel index
+
+        for in_idx,out_idx in enumerate(desired_idx):
+            
+            out_list[in_idx] =  channel_data_list[out_idx] 
+
+        return out_list
+
+
+# Replace this with your own desired output channel data order ! 
+desired_idx = [13,6,0,4,3,8,9,12,10,15,14,1,7,11,1,2]
 
 ser = SerialReader(port = '/dev/cu.usbmodemN32G45x1',
                    baud_rate=57600,
-                   timeout= 1,
+                   desired_idx= desired_idx,
                    initilizer= Initializer().initialize()
                         )
 try:
