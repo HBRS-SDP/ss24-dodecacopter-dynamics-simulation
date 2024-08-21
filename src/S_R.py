@@ -101,18 +101,18 @@ class Initializer():
         
 
 class JoyPublisher:
-    def __init__(self, data : list[int]) :
+    def __init__(self) :
         rospy.init_node('joy_publisher', anonymous=True)
         self.publisher = rospy.Publisher('joy', Joy, queue_size=10)
         self.rate = rospy.Rate(10)  # 10 Hz
-        self.data = data
+        
 
-    def publish_joy_message(self):
+    def publish_joy_message(self, data : list[int]):
         while not rospy.is_shutdown():
             joy_msg = Joy()
             
             # Simulate joystick axes
-            joy_msg.axes = self.data
+            joy_msg.axes = data
 
             self.publisher.publish(joy_msg)
             rospy.loginfo(f'Published Joy message: Axes: {joy_msg.axes}, Buttons: {joy_msg.buttons}')
@@ -127,7 +127,7 @@ class SerialReader():
                  baud_rate  : int = 9600 ,
                  timeout    : int = None , 
                  initilizer : str = None,
-                 desired_idx: list[int] = None,  # A list specifying the desired order or channel data
+                 desired_idx: list[int] = None,  # A list specifying the desired order or channel data, range [0-16)
                  crc16      : Callable = crc16_cal
                  ) -> None :
         
@@ -148,6 +148,7 @@ class SerialReader():
         self.initilizer = initilizer
         self.running = True
         self.desired_idx = desired_idx
+        self.callback_node = JoyPublisher()
         self.crc16 = crc16
 
         # Initializeing the serial port
@@ -222,8 +223,7 @@ class SerialReader():
                 
                 #Publishing data to ROS node
 
-                callback_node = JoyPublisher(ordered_data)
-                callback_node.publish_joy_message()
+                self.callback_node.publish_joy_message(ordered_data)
 
                 buffer = ''
             else:
@@ -290,7 +290,7 @@ class SerialReader():
         return out_list
 
 
-# Replace this with your own desired output channel data order ! 
+# Replace this with your own desired output channel data order, must be range [0-16) 
 desired_idx = [13,6,0,4,3,8,9,12,10,15,14,1,7,11,1,2]
 
 ser = SerialReader(port = '/dev/cu.usbmodemN32G45x1',
