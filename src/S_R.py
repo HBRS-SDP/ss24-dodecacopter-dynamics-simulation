@@ -4,8 +4,8 @@ from collections import defaultdict
 import serial
 import re
 import numpy as np
-import rospy
-from sensor_msgs.msg import Joy
+# import rospy
+# from sensor_msgs.msg import Joy
     
 # Final version. Class + data is readed byte by byte
 
@@ -100,23 +100,23 @@ class Initializer():
         return data+crc16
         
 
-class JoyPublisher:
-    def __init__(self) :
-        rospy.init_node('joy_publisher', anonymous=True)
-        self.publisher = rospy.Publisher('joy', Joy, queue_size=10)
-        self.rate = rospy.Rate(10)  # 10 Hz
+# class JoyPublisher:
+#     def __init__(self) :
+#         rospy.init_node('joy_publisher', anonymous=True)
+#         self.publisher = rospy.Publisher('joy', Joy, queue_size=10)
+#         self.rate = rospy.Rate(10)  # 10 Hz
         
 
-    def publish_joy_message(self, data : list[int]):
-        while not rospy.is_shutdown():
-            joy_msg = Joy()
+#     def publish_joy_message(self, data : list[int]):
+#         while not rospy.is_shutdown():
+#             joy_msg = Joy()
             
-            # Simulate joystick axes
-            joy_msg.axes = data
+#             # Simulate joystick axes
+#             joy_msg.axes = data
 
-            self.publisher.publish(joy_msg)
-            rospy.loginfo(f'Published Joy message: Axes: {joy_msg.axes}, Buttons: {joy_msg.buttons}')
-            self.rate.sleep()
+#             self.publisher.publish(joy_msg)
+#             rospy.loginfo(f'Published Joy message: Axes: {joy_msg.axes}')
+#             self.rate.sleep()
 
 
 
@@ -148,7 +148,7 @@ class SerialReader():
         self.initilizer = initilizer
         self.running = True
         self.desired_idx = desired_idx
-        self.callback_node = JoyPublisher()
+        # self.callback_node = JoyPublisher()
         self.crc16 = crc16
 
         # Initializeing the serial port
@@ -189,7 +189,7 @@ class SerialReader():
 
             # Converting data to a list of integer values to calculate checksum for it
             byte_list = [int(data[i:i+2], 16) for i in range(0, len(data), 2)] 
-            crc_calculated = crc16_cal(byte_list, len(byte_list))
+            crc_calculated = self.crc16(byte_list, len(byte_list))
 
             # Verifying data validity
             if recieved_crc16 == crc_calculated and len(buffer)> int(data_len) :
@@ -205,7 +205,7 @@ class SerialReader():
                     i = 1
                     n = 0
 
-                print(channel_data_dict)
+                # print(channel_data_dict)
 
                 # Again, reversing the order of MSB and LSB for hex data in each channel!
 
@@ -214,16 +214,20 @@ class SerialReader():
                     if value is not None:
                         channel_data_dict[key] = int(self.reverse(value),16)
                 
-                print(channel_data_dict)
+                print(f'Roll : {channel_data_dict['CH[1]']}, Pitch : {channel_data_dict['CH[2]']}, Yaw : {channel_data_dict['CH[4]']}, Thurst : {channel_data_dict['CH[3]']}')
+                # print(f'Yaw : {channel_data_dict['CH[4]']}')
+                # print(f'Roll : {channel_data_dict['CH[1]']}')
+                # print(f'Thurst : {channel_data_dict['CH[3]']}')
+                # print(f'Pitch : {channel_data_dict['CH[2]']}')
 
 
-                # Mapping data into desired output channel order, needs to be specified initially.
+                # # Mapping data into desired output channel order, needs to be specified initially.
 
-                ordered_data = self.ch_data_transformer(channel_data_dict,self.desired_idx)
+                # ordered_data = self.ch_data_transformer(channel_data_dict,self.desired_idx)
                 
-                #Publishing data to ROS node
+                # #Publishing data to ROS node
 
-                self.callback_node.publish_joy_message(ordered_data)
+                # self.callback_node.publish_joy_message(ordered_data)
 
                 buffer = ''
             else:
@@ -285,13 +289,14 @@ class SerialReader():
 
         for in_idx,out_idx in enumerate(desired_idx):
             
-            out_list[in_idx] =  channel_data_list[out_idx] 
+            out_list[in_idx] =  float(channel_data_list[out_idx]) 
 
         return out_list
 
 
 # Replace this with your own desired output channel data order, must be range [0-16) 
-desired_idx = [13,6,0,4,3,8,9,12,10,15,14,1,7,11,1,2]
+# desired_idx = [13,6,0,4,3,8,9,12,10,15,14,1,7,11,1,2]
+desired_idx = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
 
 ser = SerialReader(port = '/dev/cu.usbmodemN32G45x1',
                    baud_rate=57600,
