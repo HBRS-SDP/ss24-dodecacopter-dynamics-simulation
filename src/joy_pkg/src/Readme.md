@@ -1,6 +1,10 @@
 # Serial port to ROS Joy node Publisher
 
-This project reads data from a serial port, processes it, and publishes it as a ROS `Joy` message.
+This project reads data from a <a href="https://github.com/HBRS-SDP/ss24-dodecacopter-dynamics-simulation/blob/main/doc/MK15%20User%20Manual%20v1.5.pdf">MK15 MINI HANDHELD GROUND STATION CONTROLLER</a> through serial port, processes it, and publishes it as a ROS `Joy` message.
+
+<div style="text-align: center;">
+    <img src="https://www.3dxr.co.uk/images/siyi-technology-siyi-mk15-agriculture-p5612-15058_image.jpg" alt="MK15 MINI HANDHELD GROUND STATION CONTROLLER" width="800" height="600">
+</div>
 
 ## Prerequisites
 
