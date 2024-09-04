@@ -13,6 +13,7 @@ ports = Ports.comports()
 for port in ports:
     rospy.loginfo(f"Port: {port.device}, Description: {port.description}")
 
+print('Make sure to set the correct port address, when creating an object from the SerialReader class!')
 
 CRC16_XMODEM_TABLE = [
         0x0000, 0x1021, 0x2042, 0x3063, 0x4084, 0x50a5, 0x60c6, 0x70e7,
@@ -60,7 +61,7 @@ def crc16_cal(data: List[int], length: int) -> str:
         crc = ((crc << 8) & 0xFFFF) ^ CRC16_XMODEM_TABLE[(data[i] ^ temp) & 0xFF]
     
     crc = hex(crc)[2:]
-    crc_byte1 = crc[:2]  # crc16 might not always be 4 characters! Need to reverse it byte by byte
+    crc_byte1 = crc[:2]  #crc16 might not always be 4 characters! Need to reverse it byte by byte
     crc_byte2 = crc[2:]
     crc_reversed = crc_byte2 + crc_byte1
     return crc_reversed
@@ -123,10 +124,20 @@ class SerialReader:
                  baud_rate: int = 9600,
                  timeout: Optional[int] = None, 
                  initilizer: str = None,
-                 desired_idx: List[int] = None,  # A list specifying the desired order or channel data, range [0-16)
+                 desired_idx: List[int] = None,  
                  crc16: Callable[[List[int], int], str] = crc16_cal
                  ) -> None:
         
+        '''
+        Parameters:
+        port (str): The serial port to connect to.
+        baud_rate (int): The baud rate to use.
+        timeout (int): The time to wait for a response.
+        initilizer (str): The initial message to send to the serial port.
+        desired_idx List[int]: A list specifying the desired order or channel data, range [0-16)
+        callback (Callable): The callback function to send the buffer data to ROS node.
+        '''
+
         self.ser = serial.Serial(
                                 port=port, 
                                 baudrate=baud_rate,
@@ -172,9 +183,11 @@ class SerialReader:
             data = buffer[:len(buffer)-4]
             recieved_crc16 = buffer[-4:]
 
+            # Converting data to a list of integer values to calculate checksum for it
             byte_list = [int(data[i:i+2], 16) for i in range(0, len(data), 2)] 
             crc_calculated = self.crc16(byte_list, len(byte_list))
 
+            # Verifying data validity and spliting the data into individual channels.
             if recieved_crc16 == crc_calculated and len(buffer) > int(data_len):
                 while i <= num_of_channels:
                     channel_data_dict[f'CH[{i}]'] = data[16:][n:n+4] if data[16:][n:n+4] else None
@@ -184,11 +197,12 @@ class SerialReader:
                     i = 1
                     n = 0
 
+                # Again, reversing the order of MSB and LSB for hex data in each channel!
+
                 for key, value in channel_data_dict.items():
                     if value is not None:
                         channel_data_dict[key] = int(self.reverse(value), 16)
-                
-                #print(channel_data_dict)
+                # print(channel_data_dict)
                 # print(f'Roll : {channel_data_dict['CH[1]']}, Pitch : {channel_data_dict['CH[2]']}, Yaw : {channel_data_dict['CH[4]']}, Thurst : {channel_data_dict['CH[3]']}')
                 
                 # Mapping data into desired output channel order, needs to be specified initially.
@@ -197,10 +211,10 @@ class SerialReader:
                 
                 #Publishing data to ROS node
 
-                #rospy.loginfo(f'ordered_data = {ordered_data}')
                 self.callback_node.publish_joy_message(ordered_data)
+                #rospy.loginfo(f'ordered_data = {ordered_data}')
 
-                buffer = ''
+                buffer = ''  # Refreshing buffer each time a message is received
             else:
                 print('Received data has INVALID CRC!')
                 buffer = ''
@@ -210,22 +224,37 @@ class SerialReader:
         self.ser.close()
 
     def datalen_finder(self, data_stream: str) -> str:
+        ''' 
+        This function extracts the initial-raw length from the stream of input data.
+        '''
+
+        # Find '5566' followed by any two characters and capture the next four characters
         pattern_string = r'5566..(.{4})'
         pattern = re.compile(pattern_string, re.IGNORECASE)
         match = pattern.search(data_stream)
         return match.group()[-4:]
 
     def reverse(self, input: str) -> str:
+        '''
+        This function resolves the LSM front issue in the datasheet, putting MSB in front
+        '''
         input_byte1 = input[:2]  
         input_byte2 = input[2:]
-        return input_byte2 + input_byte1
+        reversed_data = input_byte2 + input_byte1
+        return reversed_data
 
     def datalen_hex(self, revised_len: str) -> int:
+        ''' 
+        This function calculates the data length in bytes (or can be used for hexadecimal characters). 
+        '''
         byte_value = bytes.fromhex(f'{revised_len}')
         decimal_value = int.from_bytes(byte_value, 'big')
         return decimal_value 
     
     def ch_data_transformer(self, ch_data_dict: Dict[str, int], desired_idx: List[int]) -> np.ndarray:
+        ''' 
+        This function transforms the channel dsata based on the desired output channel index
+        '''
         channel_data_list = list(ch_data_dict.values())
         out_list = np.zeros(16)
         for in_idx, out_idx in enumerate(desired_idx):
@@ -233,13 +262,14 @@ class SerialReader:
                 out_list[in_idx] = float(channel_data_list[out_idx]) 
         return out_list
 
-
+# Replace this with your own desired output channel data order, must be range [0-16) 
 desired_idx = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
-#data2 = '55 66 01 01 00 00 00 42 02 B5 C0'
+
+# Initializing the channel data with 50HZ frequency. For more info, see the user manual for MK15 page 106.
 initer = Initializer(CMD_ID='4206')
 data2 = initer.initialize()
 
-ser = SerialReader(port='/dev/ttyACM0',
+ser = SerialReader(port='/dev/ttyACM0',  # Set the correct serial port address here!
                    baud_rate=57600,
                    desired_idx=desired_idx,
                    timeout=1,
@@ -250,6 +280,7 @@ try:
     ser.read()
 
 except KeyboardInterrupt:
+
     ser.stop()
     print("KeyboardInterrupt caught! Stopping the runner...")
     print("Exiting gracefully.")
