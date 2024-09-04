@@ -1,1 +1,0 @@
-This api is intended to read the data 
