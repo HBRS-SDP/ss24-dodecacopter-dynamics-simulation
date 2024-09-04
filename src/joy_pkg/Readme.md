@@ -10,8 +10,9 @@ This project reads data from a <a href="https://github.com/HBRS-SDP/ss24-dodecac
 
 Ensure you have the following installed:
 
-- Python 3.8
-- ROS (Robot Operating System)      
+- Ubuntu 20.04 LTS, recommended for ROS Neotic
+- ROS (Robot Operating System)
+- Python version s3.8, supported by ROS
 - `pyserial` for serial communication
 - `numpy` for numerical processing
 
