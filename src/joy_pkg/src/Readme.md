@@ -1,9 +1,9 @@
 # Serial port to ROS Joy node Publisher
 
-This project reads data from a <a href="https://github.com/HBRS-SDP/ss24-dodecacopter-dynamics-simulation/blob/main/doc/MK15%20User%20Manual%20v1.5.pdf">MK15 MINI HANDHELD GROUND STATION CONTROLLER</a> through serial port, processes it, and publishes it as a ROS `Joy` message.
+This project reads data from a <a href="https://github.com/HBRS-SDP/ss24-dodecacopter-dynamics-simulation/blob/main/doc/MK15%20User%20Manual%20v1.5.pdf">MK15 MINI HANDHELD GROUND STATION CONTROLLER</a> through serial port, processes it, and publishes it as a ROS <a href="https://docs.ros.org/en/api/sensor_msgs/html/msg/Joy.html">Joy</a> message type.
 
 <div style="text-align: center;">
-    <img src="https://www.3dxr.co.uk/images/siyi-technology-siyi-mk15-agriculture-p5612-15058_image.jpg" alt="MK15 MINI HANDHELD GROUND STATION CONTROLLER" width="800" height="600">
+    <img src="https://www.3dxr.co.uk/images/siyi-technology-siyi-mk15-agriculture-p5612-15058_image.jpg" alt="MK15 MINI HANDHELD GROUND STATION CONTROLLER" width="700" height="500">
 </div>
 
 ## Prerequisites
@@ -67,6 +67,6 @@ use the following command for one line installation!
 
 ## Troubleshooting
 
-- Ensure the serial device path (`/dev/ttyACM0`) is correct and the device has appropriate permissions.
+- Ensure the serial device path (`/dev/ttyACM0`) is correct, and the device has appropriate permissions.    This needs to be set when creating an object from the `SerialReader` class to initialize the communication (line 243)
 - Use `rostopic list` to see available topics and ensure `/joy` is listed.
 - Check terminal logs for any errors or warnings.
