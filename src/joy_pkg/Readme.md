@@ -55,7 +55,11 @@ use the following command for one line installation!
     ```
 
 2. **Run the ROS Node**:
-    `joy_pkg` contains our publisher ROS node. Run the following code on a new terminal to start the publisher:
+    `joy_pkg` contains our publisher ROS node. Run the following codes in src directory and
+    on a new terminal to start the publisher:
+    ```bash
+    chmod +x S_R_3_8.py
+    ```
     ```bash
     rosrun joy_pkg S_R_3_8.py
     ```
