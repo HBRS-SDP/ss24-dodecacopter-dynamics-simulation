@@ -11,7 +11,7 @@ The Dodecacopter Dynamics Simulation project is designed to enable safe testing 
 ## Project Goals
 -    Develop a comprehensive 3D model of the dodecacopter.
 -    Create a configuration file with the drone's physical properties and dynamics for integration into Gazebo.
-  -    Enable manual control of the drone in the virtual environment for flight testing.
+-    Enable manual control of the drone in the virtual environment for flight testing.
 
 ## Tools and Technologies:
 
@@ -69,9 +69,11 @@ The Dodecacopter Dynamics Simulation project is designed to enable safe testing 
     -  Communication Tools: Slack, Google Meet, Webex, and GitHub.
     -  Version Control: Managed through GitHub.
 
-## Future Steps:
--  Update the SDF file with correct poses of each part of the dodecacopter.
--  Create and validate test cases and scenarios.
+## Completed Steps:
+-  Updated the SDF file with correct poses of each part of the dodecacopter.
+-  Created and validated test cases and scenarios (using mission plan).
+
+ ## Future Steps:
 -  Develop a communication interface for control commands.
 
 For detailed technical specifications, reference materials, and configuration data, please refer to the full project documentation and associated files.
@@ -79,10 +81,8 @@ For detailed technical specifications, reference materials, and configuration da
 ## Repository Links:
 -  [Drone Documentation](https://github.com/HBRS-SDP/ss24-dodecacopter-dynamics-simulation/blob/main/doc/Drone%20Documentation.md)
 -  [Project Board](https://github.com/orgs/HBRS-SDP/projects/17/views/1)
--  Project Documentation
 
 ## Installation
-
 To install the necessary dependencies, run the following commands in terminal:
 
 # Clone the repository
@@ -94,9 +94,8 @@ cd ss24-dodecacopter-dynamics-simulation
 # Install dependencies
 pip install -r requirements.txt
 
-## Command to run the drone in QGroundControl
-make px4_sitl gazebo-classic_mku25
-pxh> commander takeoff
+## Command to run the drone in Gazebo Simulator
+Sebastian edit here
 
-This is a  an overview of the project, its goals, and the tools and technologies used. For more detailed information, please refer to the project documentation included in this repository.
+This is an overview of the project, its goals, the tools and technologies used and how to run and interact with the drone model using px4 and ros in the gazebo simulation. For more detailed information on the 3D model and sdf (Simulation Description Format) file, please refer to the project documentation included in this repository.
 
