@@ -1,48 +1,3 @@
-# Documentation:
-
-# Important Features:
-
-## Pose Coordinates of the Drone:
--  Base Pose: <pose>0 0 0 0 0 0</pose>
-This indicates that the base link is positioned at the origin (0, 0, 0) with no rotation (0, 0, 0).
-
-- Link Pose: <pose>0.415 0 0 0 0 0</pose>
-This positions the wing_arm_0 link 0.415 meters along the x-axis from the origin of the base link with no rotation.
-
-- Visual Pose: <pose>-0.415 0 0 0 0 0</pose>
-This positions the visual representation of wing_arm_0 -0.415 meters along the x-axis relative to the wing_arm_0 link origin, effectively placing it back at the origin of the base link.
-
-- Collision Pose: <pose>0.228 0 -0.029 0 0 0</pose>
-This positions the collision box 0.228 meters along the x-axis and -0.029 meters along the z-axis relative to the wing_arm_0 link origin.
-
-- Link Pose: <pose>-0.415 0 0 0 0 0</pose>
-This positions the wing_arm_1 link -0.415 meters along the x-axis from the origin of the base link with no rotation.
-
-- Visual Pose: <pose>0.415 0 0 0 0 0</pose>
-This positions the visual representation of wing_arm_1 0.415 meters along the x-axis relative to the wing_arm_1 link origin, effectively placing it back at the origin of the base link.
-
-- Collision Pose: <pose>-0.228 0 -0.029 0 0 0</pose>
-This positions the collision box -0.228 meters along the x-axis and -0.029 meters along the z-axis relative to the wing_arm_1 link origin.
-
--  The link poses position the wing_arm_0 and wing_arm_1 links at 0.415 meters and -0.415 meters along the x-axis, respectively, relative to the base link. The visual poses of the wing arms are positioned back to the base link origin by offsetting them with -0.415 meters and 0.415 meters along the x-axis, respectively. This ensures that the visual meshes are displayed correctly at their intended locations. The collision poses are adjusted to align with the visual parts at 0.228 meters and -0.228 meters along the x-axis, respectively, and -0.029 meters along the z-axis, to accurately cover the wing arm visuals.
-
-## Collision:
-When importing the stl file of the drone in gazebo , it is important to import the individual parts of the drone and not the whole drone. The reason for this is because the drone will lack collision. Without collisin, the drone won't stay on the ground and it will pass through objects. This will also affect its center of gravity which will vary. 
-
-# Links:
-
--  Details about the rotor of the drone can be found in the following link: https://uav-en.tmotor.com/html/2018/navigato_0402/46.html
--  Details about the propellers of the drone can be found in the following link: https://www.mad-motor.com/collections/propellers
-
--  The 3D model of the drone was created in Inventor. To access the 3D model go to the **Final Update Assembly Drone.iam** file from the following link: https://drive.google.com/drive/folders/1MhGHMvqRIwXFox53sXme-O2n0eSo7QqC?usp=sharing  
-
-- The reference SDF FILE that was used in this project was the **iris.sdf** file from the following link: https://github.com/PX4/PX4-SITL_gazebo-classic/tree/67431d233f0f08de647f0eb11239816f9c8bd6c6/models/iris
-
-
-
-
-
-
 # Documentation for the Multi-Rotor Drone SDF File
 This document provides an in-depth explanation of the elements and parameters used in the SDF (Simulation Description Format) file for a multi-rotor Dodecacopter model named **mku25**. The SDF file is crucial for simulating the drone in Gazebo, and includes definitions for physical properties, geometry, joints, links and sensor plugins.
 -  In the SDF file, the <model> element defines the drone's structure, consisting of several important components such as links, joints, collisions, visuals, and plugins.
@@ -77,3 +32,12 @@ Rotors 0, 1, 2, ... 11 represent the rotors of the drone, having a small mass (0
 2. Motor Speed Command: Sent through /gazebo/command/motor_speed.
 3. Control Channels: Each rotor is assigned a control channel that specifies the scaling and behavior of motor control.
 
+# Links:
+
+-  Details about the motor model **KV120** of the drone can be found in: https://store.tmotor.com/product/mn805-s-kv120-motor-navigator-type.html
+-  All the plugin parameters are calculated from the github notes and discussions: https://github.com/mvernacc/gazebo_motor_model_docs/blob/master/notes.pdf and https://github.com/PX4/PX4-SITL_gazebo-classic/issues/110
+-  Please note that there are no proper validated documentations or source code for above calculations of parameter values, all the example models in the PX4 use iris model as the base (https://github.com/PX4/PX4-SITL_gazebo-classic/tree/67431d233f0f08de647f0eb11239816f9c8bd6c6/models/iris).
+-  The airframe reference is taken from https://docs.px4.io/v1.13/en/airframes/airframe_reference.html
+-  Details about the rotor of the drone can be found in https://uav-en.tmotor.com/html/2018/navigato_0402/46.html
+-  Details about the propellers of the drone can be found in https://www.mad-motor.com/collections/propellers
+-  The 3D model of the drone was created in Inventor. To access the 3D model go to the meshes folder inside the model folder.
