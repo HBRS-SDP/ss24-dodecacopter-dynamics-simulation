@@ -1,0 +1,94 @@
+[1.133s] colcon DEBUG Command line arguments: ['/usr/bin/colcon', 'list', '-p', '--base-paths', '/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws']
+[1.133s] colcon DEBUG Parsed command line arguments: Namespace(allow_overriding=[], base_paths=['/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws'], build_base='build', ignore_user_meta=False, log_base=None, log_level=None, main=<bound method ListVerb.main of <colcon_package_information.verb.list.ListVerb object at 0x7f3d3f02d520>>, metas=['./colcon.meta'], mixin=None, mixin_files=None, mixin_verb=('list',), names_only=False, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, paths=None, paths_only=True, topological_graph=False, topological_graph_density=False, topological_graph_dot=False, topological_graph_dot_cluster=False, topological_graph_dot_include_skipped=False, topological_graph_legend=False, topological_order=False, verb_extension=<colcon_package_information.verb.list.ListVerb object at 0x7f3d3f02d520>, verb_name='list', verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7f3d3f041520>)
+[1.633s] colcon.colcon_core.package_discovery Level 1 discover_packages(colcon_meta) check parameters
+[1.633s] colcon.colcon_core.package_discovery Level 1 discover_packages(recursive) check parameters
+[1.633s] colcon.colcon_core.package_discovery Level 1 discover_packages(ignore) check parameters
+[1.633s] colcon.colcon_core.package_discovery Level 1 discover_packages(path) check parameters
+[1.633s] colcon.colcon_core.package_discovery Level 1 discover_packages(recursive) discover
+[1.633s] colcon.colcon_core.package_discovery INFO Crawling recursively for packages in '/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws'
+[1.633s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws) by extensions ['ignore', 'ignore_ament_install']
+[1.633s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws) by extension 'ignore'
+[1.634s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws) by extension 'ignore_ament_install'
+[1.634s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws) by extensions ['colcon_pkg']
+[1.634s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws) by extension 'colcon_pkg'
+[1.634s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws) by extensions ['colcon_meta']
+[1.634s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws) by extension 'colcon_meta'
+[1.634s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws) by extensions ['ros']
+[1.634s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws) by extension 'ros'
+[1.665s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws) by extensions ['cmake', 'python']
+[1.665s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws) by extension 'cmake'
+[1.665s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws) by extension 'python'
+[1.665s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws) by extensions ['python_setup_py']
+[1.666s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws) by extension 'python_setup_py'
+[1.666s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/build) by extensions ['ignore', 'ignore_ament_install']
+[1.666s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/build) by extension 'ignore'
+[1.666s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/build) ignored
+[1.666s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/install) by extensions ['ignore', 'ignore_ament_install']
+[1.666s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/install) by extension 'ignore'
+[1.667s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/install) ignored
+[1.667s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/log) by extensions ['ignore', 'ignore_ament_install']
+[1.667s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/log) by extension 'ignore'
+[1.667s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/log) ignored
+[1.667s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src) by extensions ['ignore', 'ignore_ament_install']
+[1.667s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src) by extension 'ignore'
+[1.667s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src) by extension 'ignore_ament_install'
+[1.668s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src) by extensions ['colcon_pkg']
+[1.668s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src) by extension 'colcon_pkg'
+[1.668s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src) by extensions ['colcon_meta']
+[1.668s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src) by extension 'colcon_meta'
+[1.668s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src) by extensions ['ros']
+[1.668s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src) by extension 'ros'
+[1.668s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src) by extensions ['cmake', 'python']
+[1.668s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src) by extension 'cmake'
+[1.668s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src) by extension 'python'
+[1.668s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src) by extensions ['python_setup_py']
+[1.668s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src) by extension 'python_setup_py'
+[1.669s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/mavros_custom) by extensions ['ignore', 'ignore_ament_install']
+[1.669s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/mavros_custom) by extension 'ignore'
+[1.669s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/mavros_custom) by extension 'ignore_ament_install'
+[1.669s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/mavros_custom) by extensions ['colcon_pkg']
+[1.669s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/mavros_custom) by extension 'colcon_pkg'
+[1.669s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/mavros_custom) by extensions ['colcon_meta']
+[1.669s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/mavros_custom) by extension 'colcon_meta'
+[1.669s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/mavros_custom) by extensions ['ros']
+[1.670s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/mavros_custom) by extension 'ros'
+[1.670s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/mavros_custom) by extensions ['cmake', 'python']
+[1.670s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/mavros_custom) by extension 'cmake'
+[1.670s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/mavros_custom) by extension 'python'
+[1.670s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/mavros_custom) by extensions ['python_setup_py']
+[1.670s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/mavros_custom) by extension 'python_setup_py'
+[1.670s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/mavros_custom/launch) by extensions ['ignore', 'ignore_ament_install']
+[1.670s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/mavros_custom/launch) by extension 'ignore'
+[1.670s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/mavros_custom/launch) by extension 'ignore_ament_install'
+[1.671s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/mavros_custom/launch) by extensions ['colcon_pkg']
+[1.671s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/mavros_custom/launch) by extension 'colcon_pkg'
+[1.671s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/mavros_custom/launch) by extensions ['colcon_meta']
+[1.671s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/mavros_custom/launch) by extension 'colcon_meta'
+[1.671s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/mavros_custom/launch) by extensions ['ros']
+[1.671s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/mavros_custom/launch) by extension 'ros'
+[1.671s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/mavros_custom/launch) by extensions ['cmake', 'python']
+[1.671s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/mavros_custom/launch) by extension 'cmake'
+[1.671s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/mavros_custom/launch) by extension 'python'
+[1.671s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/mavros_custom/launch) by extensions ['python_setup_py']
+[1.671s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/mavros_custom/launch) by extension 'python_setup_py'
+[1.671s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/px4_msgs) by extensions ['ignore', 'ignore_ament_install']
+[1.672s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/px4_msgs) by extension 'ignore'
+[1.672s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/px4_msgs) by extension 'ignore_ament_install'
+[1.672s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/px4_msgs) by extensions ['colcon_pkg']
+[1.672s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/px4_msgs) by extension 'colcon_pkg'
+[1.672s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/px4_msgs) by extensions ['colcon_meta']
+[1.672s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/px4_msgs) by extension 'colcon_meta'
+[1.672s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/px4_msgs) by extensions ['ros']
+[1.672s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/px4_msgs) by extension 'ros'
+[1.677s] colcon.colcon_core.package_identification DEBUG Package '/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/px4_msgs' with type 'ros.ament_cmake' and name 'px4_msgs'
+[1.677s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/px4_ros_com) by extensions ['ignore', 'ignore_ament_install']
+[1.677s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/px4_ros_com) by extension 'ignore'
+[1.677s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/px4_ros_com) by extension 'ignore_ament_install'
+[1.677s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/px4_ros_com) by extensions ['colcon_pkg']
+[1.677s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/px4_ros_com) by extension 'colcon_pkg'
+[1.677s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/px4_ros_com) by extensions ['colcon_meta']
+[1.677s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/px4_ros_com) by extension 'colcon_meta'
+[1.678s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/px4_ros_com) by extensions ['ros']
+[1.678s] colcon.colcon_core.package_identification Level 1 _identify(/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/px4_ros_com) by extension 'ros'
+[1.680s] colcon.colcon_core.package_identification DEBUG Package '/home/ayusee/Desktop/MAS_Subjects/SDP/Project/ROS_Workspace/ros2_ws/src/px4_ros_com' with type 'ros.ament_cmake' and name 'px4_ros_com'
+[1.680s] colcon.colcon_core.package_discovery Level 1 discover_packages(recursive) using defaults
