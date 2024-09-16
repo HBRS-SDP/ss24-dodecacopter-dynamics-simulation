@@ -1,7 +1,7 @@
 
 # PX4-ROS2_Implementation
 
-## To imnplement and run the model of the Dodecacopter in the Gazebo simulation environment, follow the steps below:
+## To implement and run the model of the Dodecacopter in the Gazebo simulation environment, follow the steps below:
 
 1. Clone the PX4 Autopilot repository https://github.com/PX4/PX4-Autopilot into your local system.
 
