@@ -1,5 +1,8 @@
 
-# requirements.txt for the project
+# Requirements.txt for the project
 
-serial == 3.5
-crc16 == 
+Linux version 20.04 LTS
+ROS Noetic
+Pyserial == 3.5
+Python 3.8 
+Numpy
