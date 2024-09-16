@@ -1,7 +1,10 @@
 
-In order to create and run the model of the Dodecacopter in Gazebo Simulation, follow the steps below:
+# PX4-ROS2_Implementation
+
+## In order to create and run the model of the Dodecacopter in Gazebo Simulation, follow the steps below:
 
 1. Clone the PX4 Autopilot repository https://github.com/PX4/PX4-Autopilot into your local system.
+
 2. Go to the SDP project folder ss24-dodecacopter-dynamics-simulation/PX4_files/ and download all the following files:
 -	gps (folder containing .sdf and model.config files)
 -	mku25 (folder containing drone’s 3D meshes, .sdf and model.config files)
@@ -12,7 +15,7 @@ In order to create and run the model of the Dodecacopter in Gazebo Simulation, f
 
 These are the files that will be required to set up PX4 SITL Simulation. 
 
-We will now copy each of these files into necessary paths in the PX4 directory:
+3. We will now copy each of these files into necessary paths in the PX4 directory:
 
 -	Navigate to the PX4 firmware directory in your local system.
 -	Copy both the folders ‘gps’ and ‘mku25’ from above and paste them in the PX4 directory /PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic/models/.
@@ -21,18 +24,21 @@ We will now copy each of these files into necessary paths in the PX4 directory:
 -	Add the new airframe file name in the file /PX4-Autopilot/ROMFS/px4fmu_common/init.d-posix/airframes/CMakeLists.txt or simply replace the existing ‘CMakeLists.txt’ with the downloaded one from above SDP project folder.
 -	Replace the file ‘sitl_targets_gazebo-classic.cmake’ in the directory /PX4-Autopilot/src/modules/simulation/simulator_mavlink/ with the new downloaded one from the SDP Project folder. In this file, we have updated the ‘command set(models ...)’ by adding the two new model names - ‘gps’ and ‘mku25’, and updated ‘command set(worlds ...)’ by adding the new world file name ‘my_vehicle’. This step ensures that our custom models are recognized and included as an available model when running PX4 SITL simulations.
 -	Ensure that all the PX4 files from the SDP project folder are successfully added in the required locations in the PX4 firmware directory.
--	Now download and install the QGroundControl software in your system. Follow the installation instructions in its official website https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/download_and_install.html
--	Ensure the ‘Gazebo simulator’ is installed in your system. If not, follow the installation instructions from the website https://classic.gazebosim.org/tutorials?tut=install_ubuntu
+
+4. Now we mode to the installation part of thq QGroundControl Software:
+
+-	Follow the installation instructions in its official website https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/download_and_install.html
+-	Ensure that the ‘Gazebo simulator’ is installed in your system. If not, follow the installation instructions from the website https://classic.gazebosim.org/tutorials?tut=install_ubuntu
 -	Now navigate back to the root directory /PX4-Autopilot/ and open the terminal there.
--	Run the command in the terminal: PX4_NO_FOLLOW_MODE=1 make px4_sitl gazebo-classic_mku25 .
+-	Run the command in the terminal: PX4_NO_FOLLOW_MODE=1 make px4_sitl gazebo-classic_mku25 . This command will automatically open the Gazebo and the drone model should be automatically imported to the gazebo world.
+-	Run the QGroundControl software at the same time and wait for the message “Ready for takeoff!” in the terminal.
+-	As it as the message appears, enter the command: commander takeoff
+-	Now we can see the drone is armed in the QGC software, i.e., it will soon be in flight mode. In Gazebo, we can see the rotors of the drone start rotating and soon the drone takes off and hovers at an altitude of 7-9 ft.
 
-This command will automatically open the Gazebo and the drone model should be automatically imported to the gazebo world.
+5. To ensure that the drone is stable in the Gazebo simulation environment the following steps need to be done: 
 
-●	Run the QGroundControl software at the same time and wait for the message “Ready for takeoff!” in the terminal.
-●	As it as the message appears, enter the command: commander takeoff
-●	Now we can see the drone is armed in the QGC software, i.e., it will soon be in flight mode. In Gazebo, we can see the rotors of the drone start rotating and soon the drone takes off and hovers at an altitude of 7-9 ft.
-●	You can fine-tune the PID settings in the QGC to make the drone stable during takeoff and hovering. Follow the documentation to edit the PID settings in the Vehicle Setup: https://docs.px4.io/main/en/config_mc/pid_tuning_guide_multicopter_basic.html
-●	We used the following PID values for rate controller, altitude controller, velocity controller and position controller to fine tune our model:
+-	You can fine-tune the PID settings in the QGC to make the drone stable during takeoff and hovering. Follow the documentation to edit the PID settings in the Vehicle Setup: https://docs.px4.io/main/en/config_mc/pid_tuning_guide_multicopter_basic.html
+- We used the following PID values for rate controller, altitude controller, velocity controller and position controller to fine tune our model:
 
 -	MC_ROLLRATE_K: 1.9000
 -	MC_ROLLRATE_D: 0.0024
@@ -54,10 +60,10 @@ This command will automatically open the Gazebo and the drone model should be au
 -	MPC_XY_P: 0.95
 -	MPC_Z_P: 1.00
 
-●	We can also set a mission in which the drone gets launched and travels a predefined trajectory. There is a detailed tutorial for this in youtube: https://youtu.be/Oj-ZSt0F-q4?si=scpeR2uDBaF_vywU
+6. In the QGRoundControl software it is possible to also set a mission in which the drone gets launched and travels a predefined trajectory. There is a detailed tutorial for this in youtube: https://youtu.be/Oj-ZSt0F-q4?si=scpeR2uDBaF_vywU
 
 
-To integrate ROS 2 with the PX4 to run the model in Gazebo you need to do the following:
+## To integrate ROS 2 with the PX4 to run the model in the Gazebo simulation environment,  you need to do the following:
 
 1. Follow the documentation and user guide to set up ROS 2 for PX4 in https://docs.px4.io/main/en/ros2/
 2. Ensure ROS 2 Humble is installed in your system. If you are using Ubuntu version 20, then install ROS 2 Foxy, as Humble is for higher versions like Ubuntu 22.
@@ -90,6 +96,7 @@ To integrate ROS 2 with the PX4 to run the model in Gazebo you need to do the fo
 - MicroXRCEAgent udp4 -p 8888
 
 5.The agent is now running, but you won't see much until we start PX4. You can leave the agent running in this terminal! Note that only one agent is allowed per connection channel.
+
 6.Build the ROS 2 Workspace and clone necessary packages:
 - mkdir -p ~/ros2_px4_ws/src
 - cd ~/ros2_px4_ws/src
@@ -175,7 +182,7 @@ accel_calibration_count: 0
 gyro_calibration_count: 1
 ---
 9.	Launch ROS 2 Nodes that interact with PX4 (make sure the MicroXRCEAgent is running):
-ros2 launch px4_ros_com sensor_combined_listener.launch.py
+- ros2 launch px4_ros_com sensor_combined_listener.launch.py
 
 11.	In a new terminal, ensure the ROS environment variables are sourced and start the PX4 simulation:
 - cd ~/PX4-Autopilot
@@ -191,8 +198,6 @@ ros2 launch px4_ros_com sensor_combined_listener.launch.py
 
 12.	This setup initiates communication between PX4 and a ROS 2 workspace. ROS 2 nodes can now send commands to PX4 or subscribe to PX4 topics, facilitating complex simulations and controls within the Gazebo environment.
 
+13.	For testing, you can use the mission plan in the Project repository: https://github.com/HBRS-SDP/ss24-dodecacopter-dynamics-simulation/blob/main/test/mission.plan. Upload this file directly in the QGC to set up a mission and travel a straight path.
 
-
-●	For testing, you can use the mission plan in the Project repository: https://github.com/HBRS-SDP/ss24-dodecacopter-dynamics-simulation/blob/main/test/mission.plan. Upload this file directly in the QGC to set up a mission and travel a straight path.
-
-●	This was all about running the Dodecacopter model using QGC software.
+	This was all about running the Dodecacopter model using QGC software.
