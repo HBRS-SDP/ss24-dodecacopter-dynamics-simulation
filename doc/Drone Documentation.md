@@ -40,4 +40,4 @@ Rotors 0, 1, 2, ... 11 represent the rotors of the drone, having a small mass (0
 -  The airframe reference is taken from https://docs.px4.io/v1.13/en/airframes/airframe_reference.html
 -  Details about the rotor of the drone can be found in https://uav-en.tmotor.com/html/2018/navigato_0402/46.html
 -  Details about the propellers of the drone can be found in https://www.mad-motor.com/collections/propellers
--  The 3D model of the drone was created in Inventor. Please check the following link for the STL files and the 3D model of the drone: https://drive.google.com/file/d/1KSn984cVOkgP_WAqGt8mQ50ABie2zR--/view?usp=sharing
+- The 3D model of the drone was created in Inventor. The necessary STL files required for the drone simulation are present in the folder PX4_files/mku25/[meshes](https://github.com/HBRS-SDP/ss24-dodecacopter-dynamics-simulation/tree/main/PX4_files/mku25/meshes). Please check the following link for the 3D model and stl files of the Drone: https://drive.google.com/file/d/1KSn984cVOkgP_WAqGt8mQ50ABie2zR--/view?usp=sharing
