@@ -96,7 +96,7 @@ cd ss24-dodecacopter-dynamics-simulation
 pip install -r requirements.txt
 
 ## Command to run the drone in Gazebo Simulator
-<Sebastian edit here>
+Sebastian edit here
 
 This is an overview of the project, its goals, the tools and technologies used and how to run and interact with the drone model using px4 and ros in the gazebo simulation. For more detailed information on the 3D model and sdf (Simulation Description Format) file, please refer to the project documentation included in this repository.
 
