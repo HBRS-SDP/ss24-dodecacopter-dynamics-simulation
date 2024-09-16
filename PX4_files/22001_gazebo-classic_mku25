@@ -1,0 +1,94 @@
+#!/bin/sh
+#
+# @name mk-u25 Multirotor SITL
+#
+# @type Multirotor
+#
+#
+#
+
+. ${R}etc/init.d/rc.mc_defaults
+
+param set-default CA_AIRFRAME 0
+
+param set-default CA_ROTOR_COUNT 12
+
+param set-default CA_ROTOR4_PX 0.801
+param set-default CA_ROTOR4_PY 0.566
+param set-default CA_ROTOR4_PZ 0.094
+param set-default CA_ROTOR4_KM 0.05 # CCW
+
+param set-default CA_ROTOR10_PX 0.801
+param set-default CA_ROTOR10_PY 0.566
+param set-default CA_ROTOR10_PZ -0.048
+param set-default CA_ROTOR10_KM -0.05 # CW
+
+param set-default CA_ROTOR0_PX 0
+param set-default CA_ROTOR0_PY 1.005
+param set-default CA_ROTOR0_PZ 0.094
+param set-default CA_ROTOR0_KM -0.05 # CW
+
+param set-default CA_ROTOR6_PX 0
+param set-default CA_ROTOR6_PY 1.005
+param set-default CA_ROTOR6_PZ -0.048
+param set-default CA_ROTOR6_KM 0.05 # CCW
+
+param set-default CA_ROTOR3_PX -0.801
+param set-default CA_ROTOR3_PY 0.566
+param set-default CA_ROTOR3_PZ 0.094
+param set-default CA_ROTOR3_KM 0.05 # CCW
+
+param set-default CA_ROTOR9_PX -0.801
+param set-default CA_ROTOR9_PY 0.566
+param set-default CA_ROTOR9_PZ -0.048
+param set-default CA_ROTOR9_KM -0.05 # CW
+
+param set-default CA_ROTOR5_PX -0.801
+param set-default CA_ROTOR5_PY -0.566
+param set-default CA_ROTOR5_PZ 0.094
+param set-default CA_ROTOR5_KM -0.05 # CW
+
+param set-default CA_ROTOR11_PX -0.801
+param set-default CA_ROTOR11_PY -0.566
+param set-default CA_ROTOR11_PZ -0.048
+param set-default CA_ROTOR11_KM 0.05 # CCW
+
+param set-default CA_ROTOR1_PX 0
+param set-default CA_ROTOR1_PY -1.005
+param set-default CA_ROTOR1_PZ 0.094
+param set-default CA_ROTOR1_KM 0.05 # CCW
+
+param set-default CA_ROTOR7_PX 0
+param set-default CA_ROTOR7_PY -1.005
+param set-default CA_ROTOR7_PZ -0.048
+param set-default CA_ROTOR7_KM -0.05 # CW
+
+param set-default CA_ROTOR2_PX 0.801
+param set-default CA_ROTOR2_PY -0.566
+param set-default CA_ROTOR2_PZ 0.094
+param set-default CA_ROTOR2_KM -0.05 # CW
+
+param set-default CA_ROTOR8_PX 0.801
+param set-default CA_ROTOR8_PY -0.566
+param set-default CA_ROTOR8_PZ -0.048
+param set-default CA_ROTOR8_KM 0.05 # CCW
+
+
+param set-default PWM_MAIN_FUNC1 101
+param set-default PWM_MAIN_FUNC2 102
+param set-default PWM_MAIN_FUNC3 103
+param set-default PWM_MAIN_FUNC4 104
+param set-default PWM_MAIN_FUNC5 105
+param set-default PWM_MAIN_FUNC6 106
+# param set-default PWM_MAIN_FUNC7 107
+# param set-default PWM_MAIN_FUNC8 108
+# param set-default PWM_MAIN_FUNC9 109
+# param set-default PWM_MAIN_FUNC10 110
+# param set-default PWM_MAIN_FUNC11 111
+# param set-default PWM_MAIN_FUNC12 112
+param set-default PWM_AUX_FUNC1 107
+param set-default PWM_AUX_FUNC2 108
+param set-default PWM_AUX_FUNC3 109
+param set-default PWM_AUX_FUNC4 110
+param set-default PWM_AUX_FUNC5 111
+param set-default PWM_AUX_FUNC6 112
