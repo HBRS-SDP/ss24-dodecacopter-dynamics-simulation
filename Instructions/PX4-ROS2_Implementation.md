@@ -1,7 +1,7 @@
 
 # PX4-ROS2_Implementation
 
-## To imnplement and run the model of the Dodecacopter in Gazebo Simulation, follow the steps below:
+## To imnplement and run the model of the Dodecacopter in the Gazebo simulation environment, follow the steps below:
 
 1. Clone the PX4 Autopilot repository https://github.com/PX4/PX4-Autopilot into your local system.
 
@@ -95,9 +95,9 @@ These are the files that will be required to set up PX4 SITL Simulation.
 - sudo ldconfig /usr/local/lib/
 - MicroXRCEAgent udp4 -p 8888
 
-5.The agent is now running, but you won't see much until we start PX4. You can leave the agent running in this terminal! Note that only one agent is allowed per connection channel.
+5. The agent is now running, but you won't see much until we start PX4. You can leave the agent running in this terminal! Note that only one agent is allowed per connection channel.
 
-6.Build the ROS 2 Workspace and clone necessary packages:
+6. Build the ROS 2 Workspace and clone necessary packages:
 - mkdir -p ~/ros2_px4_ws/src
 - cd ~/ros2_px4_ws/src
 - git clone https://github.com/PX4/px4_msgs.git
