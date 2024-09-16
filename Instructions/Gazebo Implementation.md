@@ -33,25 +33,26 @@ This command will automatically open the Gazebo and the drone model should be au
 ●	Now we can see the drone is armed in the QGC software, i.e., it will soon be in flight mode. In Gazebo, we can see the rotors of the drone start rotating and soon the drone takes off and hovers at an altitude of 7-9 ft.
 ●	You can fine-tune the PID settings in the QGC to make the drone stable during takeoff and hovering. Follow the documentation to edit the PID settings in the Vehicle Setup: https://docs.px4.io/main/en/config_mc/pid_tuning_guide_multicopter_basic.html
 ●	We used the following PID values for rate controller, altitude controller, velocity controller and position controller to fine tune our model:
-○	MC_ROLLRATE_K: 1.9000
-○	MC_ROLLRATE_D: 0.0024
-○	MC_ROLLRATE_I: 0.125
-○	MC_PITCHRATE_K: 2.1000
-○	MC_PITCHRATE_D: 0.0032
-○	MC_PITCHRATE_I: 0.150
-○	MC_YAWRATE_K: 1.7000
-○	MC_YAWRATE_I: 0.060
-○	MC_ROLL_P: 9.50
-○	MC_PITCH_P: 6.50
-○	MC_YAW_P: 2.80
-○	MPC_XY_VEL_P_ACC: 1.80
-○	MPC_XY_VEL_I_ACC: 0.40
-○	MPC_XY_VEL_D_ACC: 0.20
-○	MPC_Z_VEL_P_ACC: 4.00
-○	MPC_Z_VEL_I_ACC: 2.00
-○	MPC_Z_VEL_D_ACC: 0.00
-○	MPC_XY_P: 0.95
-○	MPC_Z_P: 1.00
+
+-	MC_ROLLRATE_K: 1.9000
+-	MC_ROLLRATE_D: 0.0024
+-	MC_ROLLRATE_I: 0.125
+-	MC_PITCHRATE_K: 2.1000
+-	MC_PITCHRATE_D: 0.0032
+-	MC_PITCHRATE_I: 0.150
+-	MC_YAWRATE_K: 1.7000
+-	MC_YAWRATE_I: 0.060
+-	MC_ROLL_P: 9.50
+-	MC_PITCH_P: 6.50
+-	MC_YAW_P: 2.80
+-	MPC_XY_VEL_P_ACC: 1.80
+-	MPC_XY_VEL_I_ACC: 0.40
+-	MPC_XY_VEL_D_ACC: 0.20
+-	MPC_Z_VEL_P_ACC: 4.00
+-	MPC_Z_VEL_I_ACC: 2.00
+-	MPC_Z_VEL_D_ACC: 0.00
+-	MPC_XY_P: 0.95
+-	MPC_Z_P: 1.00
 
 ●	We can also set a mission in which the drone gets launched and travels a predefined trajectory. There is a detailed tutorial for this in youtube: https://youtu.be/Oj-ZSt0F-q4?si=scpeR2uDBaF_vywU
 
