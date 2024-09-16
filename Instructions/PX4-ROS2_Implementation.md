@@ -1,7 +1,7 @@
 
 # PX4-ROS2_Implementation
 
-## In order to create and run the model of the Dodecacopter in Gazebo Simulation, follow the steps below:
+## To imnplement and run the model of the Dodecacopter in Gazebo Simulation, follow the steps below:
 
 1. Clone the PX4 Autopilot repository https://github.com/PX4/PX4-Autopilot into your local system.
 
@@ -111,80 +111,81 @@ These are the files that will be required to set up PX4 SITL Simulation.
 7. Once the setup script has been successfully sourced, check to ensure that your ROS 2 environment is configured correctly by using the command ros2 topic list. This command should display a list of available ROS 2 topics if everything is set up properly. If PX4 is connected to the agent, the result will be below list of topic:
 
 
-$ ros2 topic list
-/fmu/in/actuator_motors
-/fmu/in/actuator_servos
-/fmu/in/arming_check_reply
-/fmu/in/aux_global_position
-/fmu/in/config_control_setpoints
-/fmu/in/config_overrides_request
-/fmu/in/differential_drive_setpoint
-/fmu/in/goto_setpoint
-/fmu/in/manual_control_input
-/fmu/in/message_format_request
-/fmu/in/mode_completed
-/fmu/in/obstacle_distance
-/fmu/in/offboard_control_mode
-/fmu/in/onboard_computer_status
-/fmu/in/register_ext_component_request
-/fmu/in/sensor_optical_flow
-/fmu/in/telemetry_status
-/fmu/in/trajectory_setpoint
-/fmu/in/unregister_ext_component
-/fmu/in/vehicle_attitude_setpoint
-/fmu/in/vehicle_command
-/fmu/in/vehicle_command_mode_executor
-/fmu/in/vehicle_mocap_odometry
-/fmu/in/vehicle_rates_setpoint
-/fmu/in/vehicle_thrust_setpoint
-/fmu/in/vehicle_torque_setpoint
-/fmu/in/vehicle_trajectory_bezier
-/fmu/in/vehicle_trajectory_waypoint
-/fmu/in/vehicle_visual_odometry
-/fmu/out/battery_status
-/fmu/out/estimator_status_flags
-/fmu/out/failsafe_flags
-/fmu/out/manual_control_setpoint
-/fmu/out/mode_completed
-/fmu/out/position_setpoint_triplet
-/fmu/out/sensor_combined
-/fmu/out/timesync_status
-/fmu/out/vehicle_attitude
-/fmu/out/vehicle_command_ack
-/fmu/out/vehicle_control_mode
-/fmu/out/vehicle_global_position
-/fmu/out/vehicle_gps_position
-/fmu/out/vehicle_local_position
-/fmu/out/vehicle_odometry
-/fmu/out/vehicle_status
-/parameter_events
-/rosout
+- $ ros2 topic list
+- /fmu/in/actuator_motors
+- /fmu/in/actuator_servos
+- /fmu/in/arming_check_reply
+- /fmu/in/aux_global_position
+- /fmu/in/config_control_setpoints
+- /fmu/in/config_overrides_request
+- /fmu/in/differential_drive_setpoint
+- /fmu/in/goto_setpoint
+- /fmu/in/manual_control_input
+- /fmu/in/message_format_request
+- /fmu/in/mode_completed
+- /fmu/in/obstacle_distance
+- /fmu/in/offboard_control_mode
+- /fmu/in/onboard_computer_status
+- /fmu/in/register_ext_component_request
+- /fmu/in/sensor_optical_flow
+- /fmu/in/telemetry_status
+- /fmu/in/trajectory_setpoint
+- /fmu/in/unregister_ext_component
+- /fmu/in/vehicle_attitude_setpoint
+- /fmu/in/vehicle_command
+- /fmu/in/vehicle_command_mode_executor
+- /fmu/in/vehicle_mocap_odometry
+- /fmu/in/vehicle_rates_setpoint
+- /fmu/in/vehicle_thrust_setpoint
+- /fmu/in/vehicle_torque_setpoint
+- /fmu/in/vehicle_trajectory_bezier
+- /fmu/in/vehicle_trajectory_waypoint
+- /fmu/in/vehicle_visual_odometry
+- /fmu/out/battery_status
+- /fmu/out/estimator_status_flags
+- /fmu/out/failsafe_flags
+- /fmu/out/manual_control_setpoint
+- /fmu/out/mode_completed
+- /fmu/out/position_setpoint_triplet
+- /fmu/out/sensor_combined
+- /fmu/out/timesync_status
+- /fmu/out/vehicle_attitude
+- /fmu/out/vehicle_command_ack
+- /fmu/out/vehicle_control_mode
+- /fmu/out/vehicle_global_position
+- /fmu/out/vehicle_gps_position
+- /fmu/out/vehicle_local_position
+- /fmu/out/vehicle_odometry
+- /fmu/out/vehicle_status
+- /parameter_events
+- /rosout
 
 Note that the workspace does not need to build with px4_msgs for this to succeed; topic type information is part of the message payload.
 
 8.	Use the command ros2 topic echo to show the details of a particular topic. Unlike with ros2 topic list, for this to work you must be in a workspace that has built the px4_msgs and sourced local_setup.bash so that ROS can interpret the messages. For example, the command ros2 topic echo /fmu/out/sensor_combined will echo the following topic details as they update:
 ---
-timestamp: 1726471999775514
-gyro_rad:
+- timestamp: 1726471999775514
+- gyro_rad:
 - -0.009587380103766918
 - -0.0023968429304659367
 - -0.0005326343234628439
-gyro_integral_dt: 4000
-accelerometer_timestamp_relative: 0
-accelerometer_m_s2:
+- gyro_integral_dt: 4000
+- accelerometer_timestamp_relative: 0
+- accelerometer_m_s2:
 - -0.18674775958061218
 - 0.0742204338312149
 - -9.659406661987305
-accelerometer_integral_dt: 4000
-accelerometer_clipping: 0
-gyro_clipping: 0
-accel_calibration_count: 0
-gyro_calibration_count: 1
+- accelerometer_integral_dt: 4000
+- accelerometer_clipping: 0
+- gyro_clipping: 0
+- accel_calibration_count: 0
+- gyro_calibration_count: 1
 ---
+
 9.	Launch ROS 2 Nodes that interact with PX4 (make sure the MicroXRCEAgent is running):
 - ros2 launch px4_ros_com sensor_combined_listener.launch.py
 
-11.	In a new terminal, ensure the ROS environment variables are sourced and start the PX4 simulation:
+10.	In a new terminal, ensure the ROS environment variables are sourced and start the PX4 simulation:
 - cd ~/PX4-Autopilot
 - source ~/ros2_px4_ws/install/local_setup.bash
 - make px4_sitl gazebo-classic_mku25
