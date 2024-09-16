@@ -83,9 +83,6 @@ For detailed technical specifications, reference materials, and configuration da
 -  [Project Board](https://github.com/orgs/HBRS-SDP/projects/17/views/1)
   
 
-## Installation
-To install the necessary dependencies, run the following commands in terminal:
-
 # Clone the repository
 git clone git@github.com:HBRS-SDP/ss24-dodecacopter-dynamics-simulation.git
 
