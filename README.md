@@ -81,7 +81,6 @@ For detailed technical specifications, reference materials, and configuration da
 ## Repository Links:
 -  [Drone Documentation](https://github.com/HBRS-SDP/ss24-dodecacopter-dynamics-simulation/blob/main/doc/Drone%20Documentation.md)
 -  [Project Board](https://github.com/orgs/HBRS-SDP/projects/17/views/1)
--  Project Documentation
 
 ## Installation
 To install the necessary dependencies, run the following commands in terminal:
