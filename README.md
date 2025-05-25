@@ -1,7 +1,4 @@
-# ss24-dodecacopter-dynamics-simulation
-
-
-# Dodecacopter Dynamics Simulation Project
+# Dodecacopter Dynamics Simulation
 
 
 ## Project Description:
