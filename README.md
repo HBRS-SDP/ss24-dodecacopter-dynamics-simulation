@@ -93,7 +93,7 @@ pip install -r requirements.txt
 ```
 
 ## Command to run the drone in Gazebo Simulator:
-- To run the drone in the Gazebo simulation environment several instructions need to be followed: [PX4-ROS2_Implementation](https://github.com/HBRS-SDP/ss24-dodecacopter-dynamics-simulation/blob/main/Instructions/PX4-ROS2_Implementation.md)
+To run the drone in the Gazebo simulation environment several instructions need to be followed: [PX4-ROS2_Implementation](https://github.com/HBRS-SDP/ss24-dodecacopter-dynamics-simulation/blob/main/Instructions/PX4-ROS2_Implementation.md)
 
 This is an overview of the project, its goals, the tools and technologies used and how to run and interact with the drone model using px4 and ros in the gazebo simulation. For more detailed information on the 3D model and sdf (Simulation Description Format) file, please refer to the project documentation included in this repository.
 
