@@ -78,15 +78,17 @@ For detailed technical specifications, reference materials, and configuration da
 ## Repository Links:
 -  [Drone Documentation](https://github.com/HBRS-SDP/ss24-dodecacopter-dynamics-simulation/blob/main/doc/Drone%20Documentation.md)
 -  [Project Board](https://github.com/orgs/HBRS-SDP/projects/17/views/1)
-  
 
-### Clone the repository
+## Setup Instructions:
+
+```bash
+# Clone the repository
 git clone git@github.com:HBRS-SDP/ss24-dodecacopter-dynamics-simulation.git
 
-### Change directory
+# Navigate into the project directory
 cd ss24-dodecacopter-dynamics-simulation
 
-### Install dependencies
+# Install dependencies (if any Python scripts are used)
 pip install -r requirements.txt
 
 ## Command to run the drone in Gazebo Simulator:
