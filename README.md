@@ -90,6 +90,7 @@ cd ss24-dodecacopter-dynamics-simulation
 
 # Install dependencies (if any Python scripts are used)
 pip install -r requirements.txt
+```
 
 ## Command to run the drone in Gazebo Simulator:
 - To run the drone in the Gazebo simulation environment several instructions need to be followed: [PX4-ROS2_Implementation](https://github.com/HBRS-SDP/ss24-dodecacopter-dynamics-simulation/blob/main/Instructions/PX4-ROS2_Implementation.md)
